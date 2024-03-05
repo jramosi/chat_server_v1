@@ -8,7 +8,12 @@ const { Server } = require("socket.io");
 const dotenv = require("dotenv");
 dotenv.config();
 const URL = process.env.URL_FRONTEND;
-app.use(cors());
+
+app.use(
+  cors({
+    origin: URL,
+  })
+);
 
 const server = http.createServer(app);
 
