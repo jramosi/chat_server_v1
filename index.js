@@ -42,4 +42,5 @@ server.listen(config.PORT, () => {
   console.log("######## SERVIDOR CORRIENDO ########");
   console.log("####################################");
   console.log(`############ ${config.PORT} ###############`);
+  console.log(`############ ${config.FRONTEND_URL} ###############`);
 });
