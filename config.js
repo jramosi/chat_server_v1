@@ -1,2 +1,4 @@
-export const FRONTEND_URL = process.env.FRONTEND_URL;
-export const PORT = process.env.PORT;
+module.exports = {
+  FRONTEND_URL: process.env.FRONTEND_URL,
+  PORT: process.env.PORT,
+};
