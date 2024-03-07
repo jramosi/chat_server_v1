@@ -5,7 +5,7 @@ const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
 
-const { FRONTEND_URL, PORT } = require("./config");
+const { FRONTEND_URL, PORT } = require("./config.js");
 app.use(
   cors({
     origin: "*",
