@@ -5,10 +5,7 @@ const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
 
-const dotenv = require("dotenv");
-dotenv.config();
-const URL = process.env.URL_FRONTEND;
-
+const { FRONTEND_URL, PORT } = require("./config");
 app.use(
   cors({
     origin: "*",
@@ -19,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: FRONTEND_URL,
     methods: ["GET", "POST"],
   },
 });
@@ -40,8 +37,9 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
+server.listen(PORT, () => {
   console.log("####################################");
   console.log("######## SERVIDOR CORRIENDO ########");
   console.log("####################################");
+  console.log(`############ ${PORT} ###############`);
 });
